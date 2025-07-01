@@ -1,0 +1,18 @@
+.cont_calculadora{
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 35%;
+    height: 450px;
+    border-radius: 20px 5px;
+}
+.cont_btn{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: 5px;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 275px;
+}
+   
