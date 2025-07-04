@@ -1,4 +1,5 @@
 .cont_calculadora{
+    position: relative;
     border: 1px solid black;
     margin: 0 auto;
     margin-top: 50px;
@@ -6,13 +7,21 @@
     height: 450px;
     border-radius: 20px 5px;
 }
+.display_num{
+    position:absolute;
+    right: 5px;
+    font-size: 3rem
+}
 .cont_btn{
+    position: absolute;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     gap: 5px;
-    margin: 0 auto;
     width: 90%;
-    margin-top: 275px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);    
+  
 }
    
