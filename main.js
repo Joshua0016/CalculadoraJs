@@ -8,7 +8,7 @@ document.querySelectorAll("#btn").forEach((boton) => {
     boton.addEventListener("click", (e) => {
         reset();//esto me permite resetear la calculadora al terminar una operación sólo si el usuario NO ha ingresado un operador aritmético
         display_num.textContent += e.target.value;
-        numbers += e.target.textContent;
+        numbers += e.target.value;
 
     })
 })
@@ -41,9 +41,41 @@ document.querySelector("#ac").addEventListener("click", () => {
     bool = null;
     display_num.textContent = "";
 })
+//Botón exp
+document.querySelector("#exp").addEventListener("click", () => {
+    display_num.textContent += "e";
+    numbers += "e";
+})
+document.querySelectorAll(".btn.btn-secondary").forEach((boton) => {
+    boton.addEventListener("click", (e) => {
+        reset();
+        let option = e.target.textContent;
+        let grados = numbers;
+        let radianes = grados * (Math.PI / 180);
+        switch (option) {
+            case "cos": {
 
+                display_num.textContent = Math.cos(radianes).toFixed(5);
+                numbers = display_num.textContent;
+                break;
+            }
+            case "tan": {
+
+                display_num.textContent = Math.tan(radianes).toFixed(5);
+                numbers = display_num.textContent;
+                break
+            }
+            case "sen": {
+
+                display_num.textContent = Math.sin(radianes).toFixed(5);
+                numbers = display_num.textContent;
+                break;
+            }
+        }
+    })
+})
 //al terminar una operación uso esta función para reiniciar display únicamente si no hay signos de operaciones
-let operators = ["+", "-", "*", "/"];
+let operators = ["+", "-", "*", "/", "e", "(", ")"];
 function reset() {
     if (bool && ![...display_num.textContent].some((element) => operators.includes(element))) {//pregunto si existe un operador aritmético en display antes de reiniciar
         display_num.textContent = "";
@@ -52,9 +84,13 @@ function reset() {
     }
 }
 
+function trigonometria() {
+
+}
 
 
 
+console.log(Math.cos(40));
 
 
 

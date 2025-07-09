@@ -24,4 +24,9 @@
     transform: translateX(-50%);    
   
 }
+.cont_btn2{
+    position: absolute;
+    left: 17px;
+    bottom: 182px;
+}
    
