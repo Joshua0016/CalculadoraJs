@@ -23,9 +23,9 @@ document.querySelectorAll("#operators").forEach((boton) => {
 //BOTÓN para mostrar resultados =
 document.querySelector("#igual").addEventListener("click", () => {
     bool = true;// 
-    let decimal = Number(eval(numbers));
-    display_num.textContent = decimal.toFixed(2);
-    numbers = display_num.textContent;
+    // numbers = eval(numbers).toFixed(2);
+    display_num.textContent = eval(numbers).toFixed(2);
+
 })
 //Botón para eliminar elementos en display_num ELIMINAR ELEMENTOS 
 document.querySelector("#del").addEventListener("click", () => {
@@ -48,7 +48,7 @@ document.querySelector("#exp").addEventListener("click", () => {
 })
 document.querySelectorAll(".btn.btn-secondary").forEach((boton) => {
     boton.addEventListener("click", (e) => {
-        reset();
+
         let option = e.target.textContent;
         let grados = numbers;
         let radianes = grados * (Math.PI / 180);
@@ -71,6 +71,40 @@ document.querySelectorAll(".btn.btn-secondary").forEach((boton) => {
                 numbers = display_num.textContent;
                 break;
             }
+
+        }
+    })
+})
+//raíz cuadrada
+document.querySelector("#raiz").addEventListener("click", () => {
+    display_num.textContent = Math.sqrt(numbers).toFixed(2);
+    numbers = display_num.textContent;
+})
+//elevar al cuadrado
+document.querySelector("#cuadrado").addEventListener("click", () => {
+    display_num.textContent = Math.pow(numbers, 2).toFixed(2);
+    numbers = display_num.textContent;
+})
+document.querySelector("#potenciaGen").addEventListener("click", () => {
+    display_num.textContent += "^";
+    numbers += `**`;
+
+})
+document.querySelectorAll("#log").forEach((boton) => {
+    boton.addEventListener("click", (e) => {
+        let option = e.target.textContent;
+        switch (option) {
+            case "log(x)": {
+                display_num.textContent = Math.log10(numbers).toFixed(5);
+                numbers = display_num.textContent;
+                break;
+            }
+            case "ln(x)": {
+                display_num.textContent = Math.log(numbers).toFixed(5);
+                numbers = display_num.textContent;
+                break;
+            }
+            default: break;
         }
     })
 })
@@ -84,13 +118,7 @@ function reset() {
     }
 }
 
-function trigonometria() {
 
-}
-
-
-
-console.log(Math.cos(40));
 
 
 
