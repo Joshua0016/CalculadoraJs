@@ -95,16 +95,18 @@ document.querySelector("#potenciaGen").addEventListener("click", () => {
 })
 document.querySelectorAll("#log").forEach((boton) => {
     boton.addEventListener("click", (e) => {
+
         let option = e.target.textContent;
+
         bool = true;
         switch (option) {
             case "log(x)": {
-                display_num.textContent = Math.log10(numbers).toFixed(5);
+                display_num.textContent = Math.log10(eval(numbers)).toFixed(5);
                 numbers = display_num.textContent;
                 break;
             }
             case "ln(x)": {
-                display_num.textContent = Math.log(numbers).toFixed(5);
+                display_num.textContent = Math.log(eval(numbers)).toFixed(5);
                 numbers = display_num.textContent;
                 break;
             }
@@ -121,6 +123,7 @@ function reset() {
         numbers = "";
     }
 }
+
 
 
 
