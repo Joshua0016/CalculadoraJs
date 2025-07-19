@@ -46,12 +46,14 @@ document.querySelector("#exp").addEventListener("click", () => {
     display_num.textContent += "e";
     numbers += "e";
 })
+//sen cos tan
 document.querySelectorAll(".btn.btn-secondary").forEach((boton) => {
     boton.addEventListener("click", (e) => {
 
         let option = e.target.textContent;
         let grados = numbers;
         let radianes = grados * (Math.PI / 180);
+        bool = true;
         switch (option) {
             case "cos": {
 
@@ -79,6 +81,7 @@ document.querySelectorAll(".btn.btn-secondary").forEach((boton) => {
 document.querySelector("#raiz").addEventListener("click", () => {
     display_num.textContent = Math.sqrt(numbers).toFixed(2);
     numbers = display_num.textContent;
+    bool = true;
 })
 //elevar al cuadrado
 document.querySelector("#cuadrado").addEventListener("click", () => {
@@ -93,6 +96,7 @@ document.querySelector("#potenciaGen").addEventListener("click", () => {
 document.querySelectorAll("#log").forEach((boton) => {
     boton.addEventListener("click", (e) => {
         let option = e.target.textContent;
+        bool = true;
         switch (option) {
             case "log(x)": {
                 display_num.textContent = Math.log10(numbers).toFixed(5);
